@@ -163,7 +163,7 @@ class Client(object):
         elif self.driver.upper() == 'IE':
             self.selenium = webdriver.Ie()
         elif self.driver.upper() == 'PHANTOMJS':
-            self.selenium = webdriver.PhantomJS()
+            self.selenium = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true'])
         elif self.driver.upper() == 'OPERA':
             capabilities.update(webdriver.DesiredCapabilities.OPERA)
             self.selenium = webdriver.Opera(executable_path=self.opera_path,
